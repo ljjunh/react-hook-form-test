@@ -1,10 +1,10 @@
-import { FormValues6 } from "./components/FormValues6";
+import { Submit } from "./components/Submit";
 
 function App() {
   return (
     <div className="flex flex-col p-4">
       <h1 className="text-2xl font-bold text-blue-700">React-Hook-Form</h1>
-      <FormValues6 />
+      <Submit />
     </div>
   );
 }
