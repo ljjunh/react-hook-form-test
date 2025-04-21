@@ -8,10 +8,12 @@ type FormValues = {
     github: string;
     twitter: string;
   };
+  phoneNumbers: string[];
 };
 
-// FormValues 항목에 중첩된 객체가 있는 경우
-export const FormValues1 = () => {
+// FormValues 항목에 배열이 있는 경우
+// ex) 유선, 무선 전화번호
+export const FormValues2 = () => {
   const {
     register,
     control,
@@ -25,6 +27,7 @@ export const FormValues1 = () => {
         github: "",
         twitter: "",
       },
+      phoneNumbers: ["", ""],
     },
   });
 
@@ -89,6 +92,11 @@ export const FormValues1 = () => {
             })}
           />
           <p>{errors.social?.message}</p>
+          <label htmlFor="wired">Wired phone</label>
+          <input type="text" id="wired" {...register("phoneNumbers.0")} />
+
+          <label htmlFor="Wireless">Wireless</label>
+          <input type="text" id="Wireless" {...register("phoneNumbers.1")} />
           <button>Submit</button>
         </div>
       </form>
